@@ -1,0 +1,15 @@
+<launch>
+     <!-- <arg name="record" default="false"/>
+     <arg name="record_time" default="30"/> -->
+    <include file="$(find gazebo_ros)/launch/willowgarage_world.launch">
+    </include>
+    <include file="$(find m2wr_description)/launch/spawn.launch">
+    </include>
+    <include file="$(find m2wr_description)/launch/rviz.launch">
+    </include>
+    <node 
+        pkg="turtlebot_walker" name="turtlebot_walker" type="turtlebot_walker" 
+        output="screen" launch-prefix="gnome-terminal --command"
+     />
+</launch>
+
